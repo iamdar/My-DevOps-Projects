@@ -24,7 +24,21 @@ ssh <alias>
 
 On this project, I use Amazon Web Service EC2 instance
 
-Step 1: Sign / Create account to AWS
+###Step 1: Sign / Create account to AWS
 
-Step 2: 
+###Step 2: Launch an instance
+* Use the "Amazon Machine Image (AMI)" free tier
+* Instance Type: t2.micro
+* Create a new key pair. RSA and .pem for OpenSSH
+* Save the .pem file that will be created.
+* Click Launch instance
+* Note the Public IP address and the username create. For AWS the default user is ec2-user and the IP is displayed on the instance console.
+  
+###Step 3: 
+* open your terminal cmd or bash
+* connect via SSH
+  ```
+  ssh -i "path\to\the\ssh\key.pem" ec2-user@<EC2 IP Address>
+  ```
+  
 
