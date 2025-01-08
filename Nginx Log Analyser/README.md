@@ -46,3 +46,18 @@ Top 5 response status codes:
 ```
 
 There are multiple ways to solve this challenge. Do some research on awk, sort, uniq, head, grep, and sed commands. Stretch goal is to come up with multiple solutions for the above problem. For example, instead of using awk, you can use grep and sed to filter and count the requests.
+
+## Solution
+1. Copy the script "nginx-analyzer.sh"
+2. Ensure execute is allowed
+   ```
+   chmod +x nginx-analyzer
+   ```
+4. Download the test file
+   ```
+   curl -o nginx-access.log https://gist.githubusercontent.com/kamranahmedse/e66c3b9ea89a1a030d3b739eeeef22d0/raw/77fb3ac837a73c4f0206e78a236d885590b7ae35/nginx-access.log
+   ```
+6. run the script
+  ```
+  ./nginx-analyzer.sh nginx-access.log
+  ```
