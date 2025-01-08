@@ -20,13 +20,13 @@ ssh <alias>
 
 ### Stretch goal: install and configure fail2ban to prevent brute force attacks.
 
-# Solution
+## Solution
 
 On this project, I use Amazon Web Service EC2 instance
 
-###Step 1: Sign / Create account to AWS
+### Step 1: Sign / Create account to AWS
 
-###Step 2: Launch an instance
+### Step 2: Launch an instance
 * Use the "Amazon Machine Image (AMI)" free tier
 * Instance Type: t2.micro
 * Create a new key pair. RSA and .pem for OpenSSH
@@ -34,11 +34,24 @@ On this project, I use Amazon Web Service EC2 instance
 * Click Launch instance
 * Note the Public IP address and the username create. For AWS the default user is ec2-user and the IP is displayed on the instance console.
   
-###Step 3: 
+### Step 3: 
 * open your terminal cmd or bash
 * connect via SSH
   ```
   ssh -i "path\to\the\ssh\key.pem" ec2-user@<EC2 IP Address>
+  ```
+# To connect automatically
+* add the below to ~/.ssh/config
+  ```
+  Host remote-server
+    HostName IPADDRESS
+    User ec2-user
+    IdentityFile 'path\to\the\ssh\key.pem'
+
+  ```
+* connect via
+  ```
+  ssh remote-server
   ```
   
 
